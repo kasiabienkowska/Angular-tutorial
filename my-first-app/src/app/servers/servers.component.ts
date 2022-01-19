@@ -15,6 +15,9 @@ export class ServersComponent implements OnInit {
   // userName = '';
   serverCreated = false;
   servers = ['Testserver', 'Testserver2'];
+  secret = false;
+  passwordName = 'Tuna';
+  secrets = [];
 
   constructor() {
     setTimeout(() => {
@@ -32,5 +35,10 @@ export class ServersComponent implements OnInit {
   }
   onUpdateServerName(event: any) {
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+  onDisplayDetails() {
+    this.secret = !this.secret;
+    // this.secrets.push(this.secrets.length + 1);
+    this.secrets.push(new Date());
   }
 }
